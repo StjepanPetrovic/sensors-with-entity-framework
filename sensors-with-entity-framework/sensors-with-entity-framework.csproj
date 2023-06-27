@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddSensorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSensorForm.Designer.cs">
+      <DependentUpon>AddSensorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SensorsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddSensorForm.resx">
+      <DependentUpon>AddSensorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SensorsForm.resx">
       <DependentUpon>SensorsForm.cs</DependentUpon>
     </EmbeddedResource>
