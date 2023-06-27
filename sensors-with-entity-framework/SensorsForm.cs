@@ -30,7 +30,7 @@ namespace sensors_with_entity_framework
         {
             List<Sensors> sensors = null;
 
-            using (var db = new DB_EntityEntities())
+            using (var db = new DB_EntityEntities1())
             {
                 sensors = db.Sensors.ToList();
             }
