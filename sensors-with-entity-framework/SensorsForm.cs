@@ -16,6 +16,9 @@ namespace sensors_with_entity_framework
         {
             InitializeComponent();
 
+            refreshDataGrid();
+        }
+
         public List<Sensors> getSensors()
         {
             List<Sensors> sensors = null;
@@ -27,6 +30,12 @@ namespace sensors_with_entity_framework
 
             return sensors;
         }
+
+        public void refreshDataGrid()
+        {
+            dgcSensors.DataSource = getSensors();
+            dgcSensors.Columns[4].Visible = false;
+            dgcSensors.Columns[5].Visible = false;
         }
     }
 }
