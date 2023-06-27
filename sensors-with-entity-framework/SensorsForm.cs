@@ -19,6 +19,13 @@ namespace sensors_with_entity_framework
             refreshDataGrid();
         }
 
+        private void btnAddSensor_Click(object sender, EventArgs e)
+        {
+            AddSensorForm addSensorForm = new AddSensorForm();
+
+            addSensorForm.ShowDialog();
+        }
+
         public List<Sensors> getSensors()
         {
             List<Sensors> sensors = null;

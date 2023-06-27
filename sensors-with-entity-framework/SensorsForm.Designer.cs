@@ -52,6 +52,7 @@
             this.btnAddSensor.TabIndex = 1;
             this.btnAddSensor.Text = "Add sensor";
             this.btnAddSensor.UseVisualStyleBackColor = true;
+            this.btnAddSensor.Click += new System.EventHandler(this.btnAddSensor_Click);
             // 
             // btnDeleteSensor
             // 
