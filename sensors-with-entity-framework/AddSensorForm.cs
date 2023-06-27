@@ -16,5 +16,10 @@ namespace sensors_with_entity_framework
         {
             InitializeComponent();
         }
+
+        private void btnCancelNewSensor_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

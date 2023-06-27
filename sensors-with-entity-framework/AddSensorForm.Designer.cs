@@ -101,8 +101,9 @@
             this.btnCancelNewSensor.Name = "btnCancelNewSensor";
             this.btnCancelNewSensor.Size = new System.Drawing.Size(135, 38);
             this.btnCancelNewSensor.TabIndex = 7;
-            this.btnCancelNewSensor.Text = "button2";
+            this.btnCancelNewSensor.Text = "Cancel";
             this.btnCancelNewSensor.UseVisualStyleBackColor = true;
+            this.btnCancelNewSensor.Click += new System.EventHandler(this.btnCancelNewSensor_Click);
             // 
             // AddSensorForm
             // 
