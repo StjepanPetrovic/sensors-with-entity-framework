@@ -15,11 +15,38 @@ namespace sensors_with_entity_framework
         public AddSensorForm()
         {
             InitializeComponent();
+
+            cbType.DataSource = getTypes();
+            cbUnit.DataSource = getUnits();
         }
 
         private void btnCancelNewSensor_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private List<SensorTypes> getTypes()
+        {
+            List<SensorTypes> types = null;
+
+            using (var db = new DB_EntityEntities1())
+            {
+                types = db.SensorTypes.ToList();
+            }
+
+            return types;
+        }
+
+        private List<MeasurementUnits> getUnits()
+        {
+            List<MeasurementUnits> units = null;
+
+            using (var db = new DB_EntityEntities1())
+            {
+                units = db.MeasurementUnits.ToList();
+            }
+
+            return units;
         }
     }
 }

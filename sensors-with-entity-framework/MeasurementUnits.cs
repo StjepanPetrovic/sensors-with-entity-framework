@@ -25,5 +25,10 @@ namespace sensors_with_entity_framework
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sensors> Sensors { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
