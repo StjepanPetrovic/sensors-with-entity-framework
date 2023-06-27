@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +61,12 @@
     <Compile Include="AddSensorForm.Designer.cs">
       <DependentUpon>AddSensorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MeasurementUnits.cs">
+      <DependentUpon>SensorsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sensors.cs">
+      <DependentUpon>SensorsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="SensorsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +75,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SensorsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SensorsModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SensorsModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SensorsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SensorsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SensorsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SensorTypes.cs">
+      <DependentUpon>SensorsModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddSensorForm.resx">
       <DependentUpon>AddSensorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +108,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -84,9 +118,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="SensorsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SensorsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SensorsModel.edmx.diagram">
+      <DependentUpon>SensorsModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SensorsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SensorsModel.Context.cs</LastGenOutput>
+      <DependentUpon>SensorsModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="SensorsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SensorsModel.edmx</DependentUpon>
+      <LastGenOutput>SensorsModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
