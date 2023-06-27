@@ -43,6 +43,7 @@ namespace sensors_with_entity_framework
             dgcSensors.DataSource = getSensors();
             dgcSensors.Columns[4].Visible = false;
             dgcSensors.Columns[5].Visible = false;
+            dgcSensors.Columns[6].Visible = false;
         }
     }
 }
