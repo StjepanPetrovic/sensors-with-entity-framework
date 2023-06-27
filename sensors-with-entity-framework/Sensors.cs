@@ -14,12 +14,20 @@ namespace sensors_with_entity_framework
     
     public partial class Sensors
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Sensors()
+        {
+            this.SensorReadings = new HashSet<SensorReadings>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public Nullable<int> IdSensorTypes { get; set; }
         public Nullable<int> IdMeasurementUnits { get; set; }
     
         public virtual MeasurementUnits MeasurementUnits { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SensorReadings> SensorReadings { get; set; }
         public virtual SensorTypes SensorTypes { get; set; }
     }
 }

@@ -62,6 +62,7 @@
             this.btnDeleteSensor.TabIndex = 2;
             this.btnDeleteSensor.Text = "Delete sensor";
             this.btnDeleteSensor.UseVisualStyleBackColor = true;
+            this.btnDeleteSensor.Click += new System.EventHandler(this.btnDeleteSensor_Click);
             // 
             // SensorsForm
             // 
