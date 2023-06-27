@@ -28,6 +28,28 @@ namespace sensors_with_entity_framework
             Close();
         }
 
+        private void btnAddNewSensor_Click(object sender, EventArgs e)
+        {
+            SensorTypes type = cbType.SelectedItem as SensorTypes;
+            MeasurementUnits units = cbUnit.SelectedItem as MeasurementUnits;
+
+            using (var db = new DB_EntityEntities1())
+            {
+                Sensors sensors = new Sensors
+                {
+                    Name = txtName.Text,
+                    IdSensorTypes = type.Id,
+                    IdMeasurementUnits = units.Id,
+                };
+
+                db.Sensors.Add(sensors);
+
+                db.SaveChanges();
+            }
+
+            sensorsForm.refreshDataGrid();
+        }
+
         private List<SensorTypes> getTypes()
         {
             List<SensorTypes> types = null;
