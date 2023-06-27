@@ -15,6 +15,18 @@ namespace sensors_with_entity_framework
         public SensorsForm()
         {
             InitializeComponent();
+
+        public List<Sensors> getSensors()
+        {
+            List<Sensors> sensors = null;
+
+            using (var db = new DB_EntityEntities())
+            {
+                sensors = db.Sensors.ToList();
+            }
+
+            return sensors;
+        }
         }
     }
 }
