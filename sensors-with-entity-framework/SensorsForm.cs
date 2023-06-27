@@ -21,7 +21,7 @@ namespace sensors_with_entity_framework
 
         private void btnAddSensor_Click(object sender, EventArgs e)
         {
-            AddSensorForm addSensorForm = new AddSensorForm();
+            AddSensorForm addSensorForm = new AddSensorForm(this);
 
             addSensorForm.ShowDialog();
         }

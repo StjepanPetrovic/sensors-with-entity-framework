@@ -12,9 +12,12 @@ namespace sensors_with_entity_framework
 {
     public partial class AddSensorForm : Form
     {
-        public AddSensorForm()
+        SensorsForm sensorsForm;
+
+        public AddSensorForm(SensorsForm sensorsForm)
         {
             InitializeComponent();
+            this.sensorsForm = sensorsForm;
 
             cbType.DataSource = getTypes();
             cbUnit.DataSource = getUnits();
