@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace sensors_with_entity_framework
 {
-    public partial class Form1 : Form
+    public partial class SensorsForm : Form
     {
-        public Form1()
+        public SensorsForm()
         {
             InitializeComponent();
         }
