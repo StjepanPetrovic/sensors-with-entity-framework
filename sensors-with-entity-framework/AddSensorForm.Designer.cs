@@ -31,11 +31,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnAddNewSensor = new System.Windows.Forms.Button();
-            this.txtType = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUnit = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelNewSensor = new System.Windows.Forms.Button();
+            this.cbType = new System.Windows.Forms.ComboBox();
+            this.cbUnit = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -62,13 +62,7 @@
             this.btnAddNewSensor.TabIndex = 2;
             this.btnAddNewSensor.Text = "Add";
             this.btnAddNewSensor.UseVisualStyleBackColor = true;
-            // 
-            // txtType
-            // 
-            this.txtType.Location = new System.Drawing.Point(111, 58);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(188, 22);
-            this.txtType.TabIndex = 4;
+            this.btnAddNewSensor.Click += new System.EventHandler(this.btnAddNewSensor_Click);
             // 
             // label2
             // 
@@ -78,13 +72,6 @@
             this.label2.Size = new System.Drawing.Size(42, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Type:";
-            // 
-            // txtUnit
-            // 
-            this.txtUnit.Location = new System.Drawing.Point(111, 102);
-            this.txtUnit.Name = "txtUnit";
-            this.txtUnit.Size = new System.Drawing.Size(188, 22);
-            this.txtUnit.TabIndex = 6;
             // 
             // label3
             // 
@@ -105,15 +92,31 @@
             this.btnCancelNewSensor.UseVisualStyleBackColor = true;
             this.btnCancelNewSensor.Click += new System.EventHandler(this.btnCancelNewSensor_Click);
             // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Location = new System.Drawing.Point(111, 58);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(188, 24);
+            this.cbType.TabIndex = 8;
+            // 
+            // cbUnit
+            // 
+            this.cbUnit.FormattingEnabled = true;
+            this.cbUnit.Location = new System.Drawing.Point(111, 97);
+            this.cbUnit.Name = "cbUnit";
+            this.cbUnit.Size = new System.Drawing.Size(188, 24);
+            this.cbUnit.TabIndex = 9;
+            // 
             // AddSensorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(332, 205);
+            this.Controls.Add(this.cbUnit);
+            this.Controls.Add(this.cbType);
             this.Controls.Add(this.btnCancelNewSensor);
-            this.Controls.Add(this.txtUnit);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtType);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAddNewSensor);
             this.Controls.Add(this.txtName);
@@ -130,10 +133,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnAddNewSensor;
-        private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUnit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelNewSensor;
+        private System.Windows.Forms.ComboBox cbType;
+        private System.Windows.Forms.ComboBox cbUnit;
     }
 }
